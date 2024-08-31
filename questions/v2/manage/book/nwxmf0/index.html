@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<head>
+		<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+		<title>dancing hal</title>
+		<meta name=description itemprop=description content>
+		<meta name=apple-touch-fullscreen content=yes>
+		<meta name=apple-mobile-web-app-capable content=yes>
+		<meta name=apple-mobile-web-app-status-bar-style content=black-translucent>
+		<meta name=viewport
+			content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no">
+		<script
+			src=../../../../../v2static.epub360.com/diazo/epub360player/authorization/authorization.6283601d.cache.js>
+		</script>
+		<script src=../../../../../v2static.epub360.com/thirdparty/script/script.min.js></script>
+		<link rel=stylesheet href=../../../../../v2static.epub360.com/thirdparty/animate/animate.min.css>
+		<script>
+			var player_modules = [];
+			var loadmodules = [];
+			var MODULES_DICT = {
+
+			}
+		</script>
+		<script>
+			if (window.location.search != '' && /(e_ua=)/.test(window.location.search)) {
+				var script = document.createElement("script");
+				script.type = "text/javascript";
+				script.src = "../../../../../v2static.epub360.com/diazo/epub360player/uasdk-1.0.5.min.js";
+				document.head.appendChild(script);
+			}
+		</script>
+		<script type=text/javascript>
+			_udn = "epub360.com";
+			var if_show_cover = 0;
+			var _gaq = _gaq || []; // to ensure ga anlytics work in player
+			var _paq = _paq || [];
+			var data_link = ''; // to store the data not for sharing of paragraph/slide/...
+
+			var weixin_initial = 0,
+				weixin_config_ready = 0,
+				epub360_domain = 'epub360';
+		</script>
+		<script type=text/javascript>
+			function workEnd(type) {}
+			if (navigator.userAgent.indexOf("MSIE 8.0") >= 0) {
+				Array.prototype.indexOf = function(Object) {
+					for (var i = 0; i < this.length; i++)
+						if (this[i] == Object)
+							return i;
+					return -1;
+				}
+			}
+		</script>
+		<link rel=stylesheet
+			href=../../../../../v2static.epub360.com/diazo/player-dist/mobileview.built.f1221fec.cache.css>
+		<style type=text/css>
+			div.epub360-logo1,
+			div.epub360-logo2,
+			div.epub360-logo3 {
+				display: none;
+			}
+		</style>
+		<script type=text/javascript>
+			var js_built = 1;
+			var preview_mode = 0;
+			var portal_url = 'http://zdzbxr.epub360.cn/v2/';
+			var context_type = 'PhotoGallery';
+			var context_url = 'index.html';
+			var web_url = 'http://v2static.epub360.com/';
+			var cdnPath = web_url + '';
+			if (window.location.protocol == 'index.html') {
+				web_url = 'https:' + web_url
+			} else if (web_url.indexOf('epub360.com') > 0)
+				var ga_opt_target = document.location.origin + context_url,
+					ga_opt_pagePath = context_url;
+			var has_logo = 0;
+			var dict = {
+				"msg": "success",
+				"code": 200,
+				"data": {}
+			};
+
+			var epub360 = epub360 || {};
+			epub360.settings = epub360.settings || {};
+			epub360.PlayerPlugins = epub360.PlayerPlugins || [];
+			epub360.settings.billing_type = 'USER_FREE';
+
+
+			epub360.settings.pems = {
+				'has_analytics_src': false
+			};
+
+			window.epub360_userinfo = {};
+			window.epub360_sourceinfo = {};
+		</script>
+		<script type=text/javascript>
+			function getUrlParameterByName(name, href) {
+				var qname = name;
+				var regex = new RegExp("([\\?&]" + qname + "=([^&#]*))+"),
+					results = regex.exec(location.search);
+				return results == null ? null : decodeURIComponent(results[results.length - 1].replace(/\+/g, " "));
+			};
+
+			function loadVConsole(path, callback) {
+				var script = document.createElement('script');
+				script.type = "text/javascript";
+				script.src = path;
+				script.onload = () => {
+					callback && callback();
+				}
+				document.head.append(script);
+			}
+		</script>
+		<script type=text/javascript>
+			var StorageHelper = /*#__PURE__*/ (function() {
+				function StorageHelper() {
+					this.storage = window.localStorage;
+				}
+
+				var _proto = StorageHelper.prototype;
+
+				_proto.get = function get() {
+					return this.storage.getItem("Token");
+				};
+
+				_proto.set = function set(token) {
+					this.storage.setItem("Token", token);
+				};
+
+				_proto.remove = function remove() {
+					this.storage.removeItem("Token");
+				};
+
+				return StorageHelper;
+			})();
+
+			var tokenHelper = new StorageHelper();
+
+			var request_server = new window.XMLHttpRequest();
+			var request_url
+			if (window.location.search.indexOf("weixin_auth_key") > -1) {
+				var val = window.location.search.match(/(weixin_auth_key=\w+)/)[1]
+				request_url = context_url + "config.js?url=" + encodeURIComponent(window.location.origin + window.location
+					.pathname + window.location.search) + "&" + val;
+			} else {
+				request_url = context_url + "config.js?url=" + encodeURIComponent(window.location.origin + window.location
+					.pathname + window.location.search);
+			}
+			// var request_url = context_url + "config.js?url=" + encodeURIComponent(window.location.origin + window.location.pathname + window.location.search);
+			request_server.onreadystatechange = function() {
+				if (request_server.readyState != 4 || request_server.status != 200) return;
+				var b = request_server.responseText;
+				eval(b);
+				weixin_config_ready = 1;
+
+				var wx_oauth = {
+					auth_mode: 0,
+					auth_url: 'https://open.weixin.qq.com/connect/oauth2/authorize',
+					auth_params: {
+						response_type: "code",
+						state: "nwxmf0",
+						scope: "",
+
+					}
+				};
+				if (wx_config.is_limit) {
+					window.location.replace("https://v2static.epub360.com/public/403/index.html")
+				}
+
+				if (!wx_config.Token) {
+					tokenHelper.remove()
+				}
+
+				if (wx_config.Token) {
+					tokenHelper.set(wx_config.Token)
+				}
+
+				if (typeof wechatAuthorization !== 'undefined') {
+					wechatAuthorization(wx_oauth)
+				}
+
+				if (typeof initEpub360Player == 'function') {
+					initEpub360Player();
+				}
+			};
+			if (getUrlParameterByName("-debug")) {
+				loadVConsole(
+					"../../../../../unpkg.creatby.com/vconsole%403.11.2/dist/vconsole.min.js_%3b%20filename_%3dutf-8%27%27vconsole.min.js",
+					function() {
+						var vconsole = new window.VConsole()
+						request_server.open('GET.html', request_url, true)
+						request_server.send(null)
+					});
+			} else {
+				request_server.open('GET.html', request_url, true)
+				request_server.send(null)
+			}
+		</script>
+		<link rel=stylesheet href=../../../../../js.epub360.com/nwxmf0/56/global_fonts.css>
+		<link rel=stylesheet href=../../../../../v2static.epub360.com/diazo/epub360player/google-fonts.css>
+	</head>
+	<body class="template-player portaltype-interaction-photogallery site-demo section-pic build"
+		style="background-color: #000000;">
+		<div style=display:none;>
+			<img
+				src=../../../../../cdn1.zhizhucms.com/book/covermini/7b94efa8470e71046b8315d9773e2a71_256.png_%3b%20filename_%3dutf-8%27%277b94efa8470e71046b8315d9773e2a71_256.png>
+		</div>
+		<div class="reveal typo">
+			<div class=slides-wrap
+				style=position:absolute;width:100%;height:100%;left:0;top:0;z-index:1000;transform:translateZ(100px)>
+				<div class="slides  c-transition-containment">
+					<section class=group id=group_page_13853534097181>
+						<section class=Presentation id=page_13853534097181
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_6e736b18f7331b5a7a84766c147bb941>
+						<section class=Presentation id=page_6e736b18f7331b5a7a84766c147bb941
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_0c33b035b20e530f>
+						<section class=Presentation id=page_0c33b035b20e530f
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_12a7eaca35399aa6>
+						<section class=Presentation id=page_12a7eaca35399aa6
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_89a99946491f9713>
+						<section class=Presentation id=page_89a99946491f9713
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_4a37c4ca5c5a5b73>
+						<section class=Presentation id=page_4a37c4ca5c5a5b73
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_be017eb53cfda759>
+						<section class=Presentation id=page_be017eb53cfda759
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_da3051242af067c1>
+						<section class=Presentation id=page_da3051242af067c1
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_b078ab129bc12b37>
+						<section class=Presentation id=page_b078ab129bc12b37
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_20f088e62b9bb8bc>
+						<section class=Presentation id=page_20f088e62b9bb8bc
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_34689f6df6ab00fa>
+						<section class=Presentation id=page_34689f6df6ab00fa
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_ef6043eb235f4f5b>
+						<section class=Presentation id=page_ef6043eb235f4f5b
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_8f7ddfbdc0f46717>
+						<section class=Presentation id=page_8f7ddfbdc0f46717
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_d2268f9453897a0c>
+						<section class=Presentation id=page_d2268f9453897a0c
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_72dea51d526a8315>
+						<section class=Presentation id=page_72dea51d526a8315
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_61af61f7749cfaff>
+						<section class=Presentation id=page_61af61f7749cfaff
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_20ea8ecc3c61fc33>
+						<section class=Presentation id=page_20ea8ecc3c61fc33
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_c0bd7311124812d3>
+						<section class=Presentation id=page_c0bd7311124812d3
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_0785c044474050ba>
+						<section class=Presentation id=page_0785c044474050ba
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_d1eca97024402db8>
+						<section class=Presentation id=page_d1eca97024402db8
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_aed084249d7f6e15>
+						<section class=Presentation id=page_aed084249d7f6e15
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_1e5d50e64dc65d5c>
+						<section class=Presentation id=page_1e5d50e64dc65d5c
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_be928ca12b548cf4>
+						<section class=Presentation id=page_be928ca12b548cf4
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_55bb474ac4609422>
+						<section class=Presentation id=page_55bb474ac4609422
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_628a878c67b8d89d>
+						<section class=Presentation id=page_628a878c67b8d89d
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_1aba4febbd43b645>
+						<section class=Presentation id=page_1aba4febbd43b645
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_21e9c77ff512067b>
+						<section class=Presentation id=page_21e9c77ff512067b
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_b8efa496efcc2b69>
+						<section class=Presentation id=page_b8efa496efcc2b69
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_b5be2e26b82df6cb>
+						<section class=Presentation id=page_b5be2e26b82df6cb
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_da9f2a53313f0e0e>
+						<section class=Presentation id=page_da9f2a53313f0e0e
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_c3e192ca5c76afc7>
+						<section class=Presentation id=page_c3e192ca5c76afc7
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_3465f127ee300946>
+						<section class=Presentation id=page_3465f127ee300946
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_9273bb91265934f6>
+						<section class=Presentation id=page_9273bb91265934f6
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_02ed56eec8dc9626>
+						<section class=Presentation id=page_02ed56eec8dc9626
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_ee7e80b17cb1ce7a>
+						<section class=Presentation id=page_ee7e80b17cb1ce7a
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_afa6c3baf09621d2>
+						<section class=Presentation id=page_afa6c3baf09621d2
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_47c973d93bef5017>
+						<section class=Presentation id=page_47c973d93bef5017
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_fdf676a842588f37>
+						<section class=Presentation id=page_fdf676a842588f37
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_ab27bd9b79b969e1>
+						<section class=Presentation id=page_ab27bd9b79b969e1
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_5f9ecc8969451430>
+						<section class=Presentation id=page_5f9ecc8969451430
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_e8dc14820d1177e8>
+						<section class=Presentation id=page_e8dc14820d1177e8
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_d96600463409fa6c>
+						<section class=Presentation id=page_d96600463409fa6c
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_76959a970dff78e3>
+						<section class=Presentation id=page_76959a970dff78e3
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_2a14d04ed89d76ce>
+						<section class=Presentation id=page_2a14d04ed89d76ce
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_2f386977db6c41c9>
+						<section class=Presentation id=page_2f386977db6c41c9
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_55ed8d75a8f947d1>
+						<section class=Presentation id=page_55ed8d75a8f947d1
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_f211d515e31f9803>
+						<section class=Presentation id=page_f211d515e31f9803
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_801f29e2aa02830f>
+						<section class=Presentation id=page_801f29e2aa02830f
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_89977eb38d73239a>
+						<section class=Presentation id=page_89977eb38d73239a
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_1b9e8bb95823a05f>
+						<section class=Presentation id=page_1b9e8bb95823a05f
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_552eb7306713c219>
+						<section class=Presentation id=page_552eb7306713c219
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_ff5a3e248755ae03>
+						<section class=Presentation id=page_ff5a3e248755ae03
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_1739760428a2f53b>
+						<section class=Presentation id=page_1739760428a2f53b
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_c3d5ea7c02b7ead7>
+						<section class=Presentation id=page_c3d5ea7c02b7ead7
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_48400428f9d29110>
+						<section class=Presentation id=page_48400428f9d29110
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_8ff700672d32c770>
+						<section class=Presentation id=page_8ff700672d32c770
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_0d0135246fbf1af5>
+						<section class=Presentation id=page_0d0135246fbf1af5
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_022e5e2ca434acc6>
+						<section class=Presentation id=page_022e5e2ca434acc6
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_217e3b44ddbcf2c7>
+						<section class=Presentation id=page_217e3b44ddbcf2c7
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_9e7dddd78986cdf5>
+						<section class=Presentation id=page_9e7dddd78986cdf5
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<section class=group id=group_page_fa1e2747b93d0d64>
+						<section class=Presentation id=page_fa1e2747b93d0d64
+							style="background-color: rgba(255,255,255,1.0);">
+							<div class="interaction-area typo">
+								<div class=interaction-view></div>
+							</div>
+						</section>
+					</section>
+					<div class=slideTempContainer style=position:absolute;left:-99999px;top:-99999px;></div>
+				</div>
+			</div>
+		</div>
+
+		<div id=jswait-loading class="prejsloading epub360-logo3" style="background-color: rgb(0, 0, 0); ">
+			<div class="progress active">
+				<div id=loading-progress class=bar style="background: rgb(255, 136, 0) !important;"></div>
+			</div>
+		</div>
+
+		<script type=text/javascript
+			src=../../../../../v2static.epub360.com/diazo/epub360player/player.33807c1b.cache.js></script>
+		<script type=text/javascript src=../../../../../js.epub360.com/nwxmf0/56/index.js></script>
+		<script src=../../../../../res.wx.qq.com/open/js/jweixin-1.6.0.js></script>
+		<script>
+			// TODO 临时修补微信jssdk 问题 ， 后续会去掉
+			if (typeof res == "undefined" || !res) {
+				window.res = {};
+			}
+		</script>
+		<script>
+			var cdnPath = web_url + 'diazo/player-dist/';
+		</script>
+		<script type=text/javascript src=../../../../../v2static.epub360.com/diazo/epub360player/jquery-1.min.js>
+		</script>
+		<script type=text/javascript>
+			var epub360_player = '';
+			if (isMobilePlayer) {
+
+				epub360_player = '../../../../../v2static.epub360.com/diazo/player-dist/mobileview.built.d5e6159f.cache.js';
+
+			} else {
+
+				epub360_player = '../../../../../v2static.epub360.com/diazo/player-dist/touchview.built.49760833.cache.js';
+
+			}
+			player_modules.push(epub360_player);
+
+
+
+
+			if (typeof epub360InitEvent == 'function') {
+				epub360InitEvent();
+			}
+		</script><!-- 分享信息-->
+		<script type=text/javascript>
+			$script(player_modules, 'player');
+			$script.ready('player', function() {
+				var _i = window.setInterval(function() {
+					if (window.start_player) {
+						if (loadmodules.length) {
+							$script(loadmodules, 'modules');
+							$script.ready('modules', function() {
+								console.log('loaded');
+								if (!window.js_loaded) {
+									window.js_loaded = true;
+									window.start_player();
+								}
+							})
+						} else {
+							if (!window.js_loaded) {
+								window.js_loaded = true;
+								window.start_player();
+							}
+						}
+						clearInterval(_i);
+					}
+				}, 50);
+			})
+
+
+
+			var bookTitle = 'copy_微信作品';
+			var msgContent = ''; // 微信转发短语
+			var msgTitle = 'copy_微信作品'; // 微信转发标题
+			var shareTitle = 'copy_微信作品'; // 微信分享朋友圈标题
+
+			var appid = '';
+
+
+			// 微信分享图片
+			var imgUrl =
+				'../../../../../cdn1.zhizhucms.com/book/covermini/7b94efa8470e71046b8315d9773e2a71_256.png_%3b%20filename_%3dutf-8%27%277b94efa8470e71046b8315d9773e2a71_256.png';
+			if (window.location.protocol != 'https:' && imgUrl.indexOf(window.location.protocol) < 0) {
+				if (imgUrl[0] == '.') {
+					imgUrl = '/' + imgUrl;
+				}
+				imgUrl = imgUrl.indexOf('//') === 0 ? window.location.protocol + imgUrl : window.location.protocol + '//' +
+					window.location.host + imgUrl;
+			}
+
+			var localUrl = window.location.origin + window.location.pathname;
+			var localSearch = window.location.search;
+
+			// 微信分享网址
+			var message_link = localUrl + localSearch;
+			var message_hash = window.location.hash;
+		</script>
+		<script type=text/javascript
+			src=../../../../../v2static.epub360.com/diazo/epub360player/weixin.a6c2a28b.cache.js></script>
+	</body>
+</html>

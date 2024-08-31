@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta content="http://www.epub360.com" property="og:url">
+		<meta property="qc:admins" content="3567110777650523606375" />
+		<title>Epub360意派—专业H5页面制作工具</title>
+		<meta name="renderer" content="webkit">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+		<link rel="stylesheet" type="text/css" href="//v2static.epub360.com/thirdparty/animate/animate.css" />
+		<link type="text/css" href="//v2static.epub360.com/static0601/thirdparty_css/bootstrap.min.css" rel="stylesheet"
+			media="all">
+		<link type="text/css" href="//v2static.epub360.com/static0601/thirdparty_css/font-awesome.min.css"
+			rel="stylesheet" media="all">
+		<link type="text/css" href="//v2static.epub360.com/static0601/css/pack.built.d7a4735d.cache.css"
+			rel="stylesheet" media="all">
+
+
+		<script type="text/javascript">
+			if (navigator.appVersion.match(/MSIE [678]./i) == null) {
+				document.writeln('<link type="text/css" href="//v2static.epub360.com/static0601/styles.css" rel="stylesheet">')
+			}
+		</script>
+
+		<link type="text/css" href="//v2static.epub360.com/site.patch.85dd1cf4.cache.css?v=20191220" rel="stylesheet"
+			media="all">
+	</head>
+
+	<body>
+		<div class="modal fade" id="kchatModal" tabindex="-1" role="dialog" aria-labelledby="kchatModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+								aria-hidden="true">×</span></button>
+						<iframe src="" width="100%" height="500">
+						</iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script type="text/javascript">
+			var global = {};
+			global.message = function(type, msg) {
+				alert(msg);
+			}
+		</script>
+
+
+
+
+		<script type="text/javascript" src="//v2static.epub360.com/static0601/require/c.js"></script>
+		<script type="text/javascript" src="//v2static.epub360.com/static0601/require/almond.js"></script>
+		<script type="text/javascript" src="//v2static.epub360.com/static0601/thirdparty_js/jquery-custom.min.js">
+		</script>
+		<script type="text/javascript" src="//v2static.epub360.com/static0601/thirdparty_js/bootstrap.min.js"></script>
+		<script>
+			define('bootstrap', function() {});
+			$(document).ready(function() {
+				$('[data-toggle="tooltip"]').tooltip();
+				$('div#wxQrcode .textlink_IKlpeH2').on('mouseenter', function() {
+					$('div#wxQrcode img.qrcode').toggleClass('show');
+				}).on('mouseleave', function() {
+					$('div#wxQrcode img.qrcode').toggleClass('show');
+				});
+				$('div#feedback div.feedback-service').on('click', function() {
+					$(this).parents('.feedback-wrap').first().toggleClass('open');
+				})
+
+
+				if (!(_g_device.tablet() || _g_device.mobile())) {
+					$('img[rel="tooltip"]').tooltip();
+					$('a[rel="tooltip"]').tooltip();
+				} else {
+					$('.hidden-xs video').remove();
+					$('video.hidden-xs').remove();
+				}
+
+				function playVideo(src) {
+
+					if (_g_device.mobile()) {
+						var screenSize = _g_device.screenSize();
+						var playerWidth = screenSize.x,
+							playerHeight = Number(592 * playerWidth / 980);
+						$('body').append(
+							'<div class="lightbox" id="epub360-video-player"><div class="lightbox-container" style="width:' +
+							playerWidth + 'px; height:' + playerHeight + 'px; margin-top: -' + (playerHeight / 2) +
+							'px;margin-left: -' + (playerWidth / 2) +
+							'px;"><div class="close"><a href="javascript:void(0)">CLOSE [X]</a></div><iframe width="100%" height="100%" src="" frameborder="0" scrolling="no" allowfullscreen></iframe></div><div class="overlay"></div></div>'
+							);
+					} else {
+						$('body').append(
+							'<div class="lightbox" id="epub360-video-player"><div class="lightbox-container"><div class="close"><a href="javascript:void(0)">CLOSE [X]</a></div><iframe width="100%" height="100%" src="" frameborder="0" scrolling="no" allowfullscreen></iframe></div><div class="overlay"></div></div>'
+							);
+					}
+					$('.lightbox').show();
+
+					$('.lightbox-container iframe').attr("src", src);
+
+				}
+
+				// lightbox
+				$('a[data-target="video"]').click(function() {
+					var src = $(this).attr('href');
+					playVideo(src);
+					return false;
+				});
+
+				$('div[data-target="video"]').click(function(event) {
+					event.preventDefault ? event.preventDefault() : event.returnValue = false;
+					var src = $(this).attr('data-src');
+					playVideo(src);
+					return false;
+				});
+
+				// close 
+				$('.lightbox .overlay, .lightbox .close').live("click", function() {
+					$('.lightbox').remove();
+					$('.lightbox-container iframe').attr("src", "");
+				});
+
+				$('button.taobao').live('click', function() {
+					window.location.href = 'http://www.epub360.com/taobao/login/';
+				});
+
+			})
+		</script>
+		<script type="text/javascript" src="//v2static.epub360.com/static0601/js/pack.built.6ced3f42.cache.js"></script>
+
+
+
+		<!-- ie8 以下版本提示信息 -->
+		<!--[if lt ie 8]>
+  <script type="text/javascript">
+    window.onload=function(){
+      document.getElementById('browser-tip').style.display = "block";
+      document.getElementsByTagName('body')[0].style.paddingTop = "50px";
+    }
+    function hide(){
+      document.getElementById('browser-tip').style.display = "none";
+      document.getElementsByTagName('body')[0].style.paddingTop = "0px";
+    }
+  </script>
+<![endif]-->
+		<div id="browser-tip"
+			style="position:fixed; top:0; left:0; right:0; z-index:9999; height:30px; line-height:33px; padding:10px 0 9px; text-indent:30px; font-size:15px; background:#fcf8e3; border-bottom:1px solid #fbeed5; width:100%;display:none;">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+				style="display:block; float:right; z-index:9999; line-height:36px; margin-right: 0px;padding:0; font-size:32px; color:#666; box-shadow: 0; text-shadow:none; text-align:center; filter:alpha(opacity=100); -khtml-opacity:1; opacity:1;"
+				onclick="hide()">×</button>
+			<p style="text-align: center;">
+				您当前使用的浏览器版本较低，为使您获得更好的操作体验，我们推荐您使用：
+				<span style="margin-left:10px;">
+					<a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank">
+						<img src="//v2static.epub360.com/site-epub360/img/compatible_ie.gif" width="31" height="30"
+							alt="Internet Explorer" title="Internet Explorer"></a>
+					<a href="http://www.google.com/intl/zh-CN/chrome/" target="_blank">
+						<img src="//v2static.epub360.com/site-epub360/img/compatible_chrome.gif" width="31" height="30"
+							alt="Google Chrome" title="Google Chrome"></a>
+					<a href="http://www.mozilla.org/zh-CN/firefox/new/" target="_blank">
+						<img src="//v2static.epub360.com/site-epub360/img/compatible_firefox.gif" width="31" height="30"
+							alt="Firefox" title="Firefox"></a>
+					<a href="http://support.apple.com/zh_CN/downloads/#safari" target="_blank">
+						<img src="//v2static.epub360.com/site-epub360/img/compatible_safari.gif" width="28" height="30"
+							alt="Safari" title="Safari"></a>
+				</span>
+			</p>
+		</div>
+
+
+
+		<script type="text/javascript">
+			_udn = "epub360.com";
+			var _gaq = _gaq || [];
+		</script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-8828452-4"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-8828452-4', );
+		</script>
+		<script type="text/javascript">
+			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cscript src='" + _bdhmProtocol +
+				"hm.baidu.com/h.js%3F8f8817ff462f173893d1e1118c2a0ab8' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+
+
+
+
+
+	</body>
+</html>
